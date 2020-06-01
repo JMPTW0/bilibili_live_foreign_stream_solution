@@ -4,8 +4,8 @@
 ## 本教程适合有一定Linux基础用户使用
 
 ### 1. 条件
-1. 国内服务器一台，推荐使用nat vps
-2. 本地到国内的中转服务器一台或多台，取决于当前的线路
+#### 1.1 国内服务器一台，推荐使用nat vps
+#### 1.2 本地到国内的中转服务器一台或多台，取决于当前的线路
    例子：本人在欧洲，首先使用了DO的`伦敦`作为最初的中继，然后中转到阿里国际的`香港`，再转到国内移动`nat`，最后从`nat`向`b站`推流
    `Local -> Do -> HK -> CN nat -> bili`
    如果本地到nat的速度足够，情况最优是 `Local -> CN nat -> bili`，这样延迟会很低，像我这种情况多次中转之后延迟最高可以达到10s
@@ -21,7 +21,7 @@
 
 这里按照`Do -> HK -> nat`的2层中转模式进行
 
-#### 1. Do
+#### 3.1 Do
 
 安装nginx和rtmp模块，如果想使用最新版nginx需要自己编译源文件和模块，这里使用系统自带版本比较快
 
@@ -57,7 +57,7 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful
 
 然后重启nginx `service nginx restart`
 
-#### 2. HK
+#### 3.2 HK
 
 操作同Do
 
@@ -90,7 +90,7 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful
 
 然后重启nginx `service nginx restart`
 
-#### 3. nat
+#### 3.3 nat
 
 这里就需要安装ffmpeg了，注意`apt install`增加了`ffmpeg`
 不过通常这些主机商都没有修改apt源，下载会很慢，可以将源修改成ali的源，具体自己查询`系统版本 + 修改ali源/国内源`
