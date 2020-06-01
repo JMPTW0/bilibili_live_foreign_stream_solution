@@ -9,6 +9,10 @@
    例子：本人在欧洲，首先使用了DO的`伦敦`作为最初的中继，然后中转到阿里国际的`香港`，再转到国内移动`nat`，最后从`nat`向`b站`推流
    `Local -> Do -> HK -> CN nat -> bili`
    如果本地到nat的速度足够，情况最优是 `Local -> CN nat -> bili`，这样延迟会很低，像我这种情况多次中转之后延迟最高可以达到10s
+   
+   twitch延迟:![twitch_latency.png](twitch_latency.png)
+   
+   bili延迟:![bili_latency.png](bili_latency.png)
 
 ### 2. 基本原理
 通过`nginx-rtmp`接收推流，并将流转推到下一个服务器
