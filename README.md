@@ -1,3 +1,6 @@
+# 已废弃
+建议使用 https://github.com/haha114514/bilitester
+
 # bilibili_live_foreign_stream_solution
 
 解决b站海外直播限制问题
